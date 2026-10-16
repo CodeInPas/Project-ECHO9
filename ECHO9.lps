@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="ECHO9.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="3"/>
+        <CursorPos X="45" Y="13"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\ui\uMainForm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MainForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="916"/>
+        <CursorPos X="5" Y="935"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\core\uGameTypes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="122"/>
+        <CursorPos X="5" Y="152"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\core\uGameEngine.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="574"/>
+        <CursorPos X="5" Y="605"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\core\uEntityManager.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UsageCount Value="27"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\entities\uSonarEntity.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="10"/>
+        <TopLine Value="76"/>
+        <CursorPos X="5" Y="106"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\entities\uPlayerSub.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UsageCount Value="27"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\entities\uHostileSub.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="183"/>
+        <CursorPos X="5" Y="213"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\entities\uBioEntity.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="104"/>
+        <CursorPos X="5" Y="134"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\entities\uCountermeasure.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="9"/>
+        <TopLine Value="107"/>
+        <CursorPos X="5" Y="137"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\dsp\uSignalBuffer.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UsageCount Value="27"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\dsp\uAcousticSim.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UsageCount Value="27"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\rendering\uThemeConfig.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UsageCount Value="27"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\rendering\uSonarRenderer.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="211"/>
+        <CursorPos X="5" Y="241"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\rendering\uCustomControls.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UsageCount Value="27"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\data\uDatabaseManager.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="11"/>
+        <TopLine Value="131"/>
+        <CursorPos X="5" Y="162"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\data\uCombatLogger.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UsageCount Value="27"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\dsp\uaudiomanager.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uAudioManager"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="59"/>
+        <CursorPos X="5" Y="202"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\ui\uMainForm.lfm"/>
+        <EditorIndex Value="4"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\core\bass.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="BASS"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="21"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="29">
+      <Position>
+        <Filename Value="src\ui\uMainForm.lfm"/>
+        <Caret Line="957" Column="49" TopLine="945"/>
+      </Position>
+      <Position>
+        <Filename Value="src\core\uGameEngine.pas"/>
+        <Caret Line="520" Column="49" TopLine="515"/>
+      </Position>
+      <Position>
+        <Filename Value="src\ui\uMainForm.pas"/>
+        <Caret Line="866" Column="22" TopLine="863"/>
+      </Position>
+      <Position>
+        <Filename Value="src\ui\uMainForm.lfm"/>
+        <Caret Line="1080" Column="42" TopLine="1068"/>
+      </Position>
+      <Position>
+        <Filename Value="src\core\uGameTypes.pas"/>
+        <Caret Line="7" Column="47"/>
+      </Position>
+      <Position>
+        <Filename Value="src\dsp\uaudiomanager.pas"/>
+        <Caret Line="202" Column="5" TopLine="172"/>
+      </Position>
+      <Position>
+        <Filename Value="src\core\uGameEngine.pas"/>
+        <Caret Line="541" Column="49" TopLine="533"/>
+      </Position>
+      <Position>
+        <Filename Value="src\core\uGameEngine.pas"/>
+        <Caret Line="604" Column="5" TopLine="574"/>
+      </Position>
+      <Position>
+        <Filename Value="src\ui\uMainForm.pas"/>
+        <Caret Line="931" Column="19" TopLine="925"/>
+      </Position>
+      <Position>
+        <Filename Value="src\ui\uMainForm.pas"/>
+        <Caret Line="958" Column="5" TopLine="929"/>
+      </Position>
+      <Position>
+        <Filename Value="src\core\uGameEngine.pas"/>
+        <Caret Line="578" Column="44" TopLine="575"/>
+      </Position>
+      <Position>
+        <Filename Value="src\core\uGameEngine.pas"/>
+        <Caret Line="593" Column="56" TopLine="575"/>
+      </Position>
+      <Position>
+        <Filename Value="src\core\uGameEngine.pas"/>
+        <Caret Line="592" Column="79" TopLine="575"/>
+      </Position>
+      <Position>
+        <Filename Value="src\ui\uMainForm.pas"/>
+        <Caret Line="958" Column="5" TopLine="928"/>
+      </Position>
+      <Position>
+        <Filename Value="src\ui\uMainForm.pas"/>
+        <Caret Line="929" Column="13" TopLine="911"/>
+      </Position>
+      <Position>
+        <Filename Value="src\ui\uMainForm.pas"/>
+        <Caret Line="919" Column="22" TopLine="908"/>
+      </Position>
+      <Position>
+        <Filename Value="src\dsp\uaudiomanager.pas"/>
+        <Caret Line="66" Column="14" TopLine="136"/>
+      </Position>
+      <Position>
+        <Filename Value="src\dsp\uaudiomanager.pas"/>
+        <Caret Line="8" Column="43"/>
+      </Position>
+      <Position>
+        <Filename Value="src\dsp\uaudiomanager.pas"/>
+        <Caret Line="66" Column="16" TopLine="52"/>
+      </Position>
+      <Position>
+        <Filename Value="src\dsp\uaudiomanager.pas"/>
+        <Caret Line="95" Column="79" TopLine="77"/>
+      </Position>
+      <Position>
+        <Filename Value="src\dsp\uaudiomanager.pas"/>
+        <Caret Line="85" TopLine="74"/>
+      </Position>
+      <Position>
+        <Filename Value="src\dsp\uaudiomanager.pas"/>
+        <Caret Line="96" Column="69" TopLine="82"/>
+      </Position>
+      <Position>
+        <Filename Value="src\ui\uMainForm.pas"/>
+        <Caret Line="927" Column="5" TopLine="908"/>
+      </Position>
+      <Position>
+        <Filename Value="src\ui\uMainForm.pas"/>
+        <Caret Line="928" Column="5" TopLine="909"/>
+      </Position>
+      <Position>
+        <Filename Value="src\ui\uMainForm.pas"/>
+        <Caret Line="929" Column="5" TopLine="910"/>
+      </Position>
+      <Position>
+        <Filename Value="src\ui\uMainForm.pas"/>
+        <Caret Line="930" Column="5" TopLine="911"/>
+      </Position>
+      <Position>
+        <Filename Value="src\ui\uMainForm.pas"/>
+        <Caret Line="931" Column="5" TopLine="912"/>
+      </Position>
+      <Position>
+        <Filename Value="src\ui\uMainForm.pas"/>
+        <Caret Line="932" Column="5" TopLine="913"/>
+      </Position>
+      <Position>
+        <Filename Value="src\ui\uMainForm.pas"/>
+        <Caret Line="933" Column="5" TopLine="914"/>
+      </Position>
+      <Position>
+        <Filename Value="src\ui\uMainForm.pas"/>
+        <Caret Line="934" Column="5" TopLine="915"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
