@@ -1,0 +1,1277 @@
+object MainForm: TMainForm
+  Left = 120
+  Height = 768
+  Top = 80
+  Width = 1280
+  Caption = 'ECHO-9'
+  ClientHeight = 749
+  ClientWidth = 1280
+  Color = 1051399
+  KeyPreview = True
+  Menu = MainMenu1
+  Position = poScreenCenter
+  LCLVersion = '4.8.0.0'
+  WindowState = wsMaximized
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnKeyDown = FormKeyDown
+  OnResize = FormResize
+  object pnlLeftTerminal: TPanel
+    Left = 0
+    Height = 749
+    Top = 0
+    Width = 910
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 749
+    ClientWidth = 910
+    Color = 1051399
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 0
+    object pnlSonarScope: TPanel
+      Left = 0
+      Height = 449
+      Top = 0
+      Width = 910
+      Align = alClient
+      BevelOuter = bvNone
+      BorderWidth = 1
+      ClientHeight = 449
+      ClientWidth = 910
+      Color = 1051399
+      ParentBackground = False
+      ParentColor = False
+      TabOrder = 0
+      object pbSonar: TPaintBox
+        Left = 1
+        Height = 447
+        Top = 1
+        Width = 908
+        Align = alClient
+        OnMouseDown = pbSonarMouseDown
+        OnMouseMove = pbSonarMouseMove
+        OnPaint = pbSonarPaint
+        OnResize = pbSonarResize
+      end
+    end
+    object pnlBottomTelemetry: TPanel
+      Left = 0
+      Height = 300
+      Top = 449
+      Width = 910
+      Align = alBottom
+      BevelOuter = bvNone
+      ClientHeight = 300
+      ClientWidth = 910
+      Color = 1576970
+      ParentBackground = False
+      ParentColor = False
+      TabOrder = 1
+      object pnlSpectrogramContainer: TPanel
+        Left = 0
+        Height = 185
+        Top = 0
+        Width = 910
+        Align = alTop
+        BevelOuter = bvNone
+        ClientHeight = 185
+        ClientWidth = 910
+        Color = 1576970
+        ParentBackground = False
+        ParentColor = False
+        TabOrder = 0
+        object pnlSpecHeader: TPanel
+          Left = 0
+          Height = 24
+          Top = 0
+          Width = 910
+          Align = alTop
+          BevelOuter = bvNone
+          ClientHeight = 24
+          ClientWidth = 910
+          Color = 2102541
+          ParentBackground = False
+          ParentColor = False
+          TabOrder = 0
+          object lblSpecTitle: TLabel
+            Left = 14
+            Height = 14
+            Top = 4
+            Width = 112
+            Caption = 'SPECTROGRAM VIEW'
+            Font.Color = 16773120
+            Font.Height = -12
+            Font.Name = 'Consolas'
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object lblSpecLegend: TLabel
+            Left = 727
+            Height = 13
+            Top = 5
+            Width = 168
+            Anchors = [akTop, akRight]
+            Caption = '─── AMPLITUDE   ─── BASELINE'
+            Font.Color = clSilver
+            Font.Height = -11
+            Font.Name = 'Consolas'
+            ParentColor = False
+            ParentFont = False
+          end
+        end
+        object pnlChartsGrid: TPanel
+          Left = 0
+          Height = 161
+          Top = 24
+          Width = 910
+          Align = alClient
+          BevelOuter = bvNone
+          ClientHeight = 161
+          ClientWidth = 910
+          Color = 1051399
+          ParentBackground = False
+          ParentColor = False
+          TabOrder = 1
+          object pnlWaterfallBox: TPanel
+            Left = 6
+            Height = 153
+            Top = 4
+            Width = 295
+            Align = alLeft
+            BorderSpacing.Left = 6
+            BorderSpacing.Top = 4
+            BorderSpacing.Bottom = 4
+            BevelOuter = bvNone
+            ClientHeight = 153
+            ClientWidth = 295
+            Color = 1051399
+            ParentBackground = False
+            ParentColor = False
+            TabOrder = 0
+            object pbWaterfall: TPaintBox
+              Left = 0
+              Height = 133
+              Top = 0
+              Width = 295
+              Align = alClient
+              OnPaint = pbWaterfallPaint
+              OnResize = pbWaterfallResize
+            end
+            object lblWaterfallAxis: TLabel
+              Left = 0
+              Height = 20
+              Top = 133
+              Width = 295
+              Align = alBottom
+              Alignment = taCenter
+              AutoSize = False
+              Caption = 'FREQUENCY (Hz)'
+              Font.Color = clSilver
+              Font.Height = -11
+              Font.Name = 'Consolas'
+              Layout = tlCenter
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object pnlNoiseFloorBox: TPanel
+            Left = 307
+            Height = 153
+            Top = 4
+            Width = 295
+            Align = alLeft
+            BorderSpacing.Left = 6
+            BorderSpacing.Top = 4
+            BorderSpacing.Bottom = 4
+            BevelOuter = bvNone
+            ClientHeight = 153
+            ClientWidth = 295
+            Color = 1051399
+            ParentBackground = False
+            ParentColor = False
+            TabOrder = 1
+            object chartNoiseFloor: TChart
+              Left = 0
+              Height = 133
+              Top = 0
+              Width = 295
+              AllowPanning = False
+              AllowZoom = False
+              AxisList = <              
+                item
+                  Marks.LabelBrush.Style = bsClear
+                  Minors = <>
+                  Title.LabelFont.Orientation = 900
+                  Title.LabelBrush.Style = bsClear
+                end              
+                item
+                  Alignment = calBottom
+                  Marks.LabelBrush.Style = bsClear
+                  Minors = <>
+                  Title.LabelBrush.Style = bsClear
+                end>
+              Foot.Brush.Color = clBtnFace
+              Foot.Font.Color = clBlue
+              Title.Brush.Color = clBtnFace
+              Title.Font.Color = clBlue
+              Title.Text.Strings = (
+                'TAChart'
+              )
+              Align = alClient
+              object lsSignalWave: TLineSeries
+              end
+              object lsNoiseBaseline: TLineSeries
+              end
+            end
+            object lblNoiseFloorAxis: TLabel
+              Left = 0
+              Height = 20
+              Top = 133
+              Width = 295
+              Align = alBottom
+              Alignment = taCenter
+              AutoSize = False
+              Caption = 'NOISE FLOOR'
+              Font.Color = clSilver
+              Font.Height = -11
+              Font.Name = 'Consolas'
+              Layout = tlCenter
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object pnlSNRBox: TPanel
+            Left = 608
+            Height = 153
+            Top = 4
+            Width = 296
+            Align = alClient
+            BorderSpacing.Left = 6
+            BorderSpacing.Top = 4
+            BorderSpacing.Right = 6
+            BorderSpacing.Bottom = 4
+            BevelOuter = bvNone
+            ClientHeight = 153
+            ClientWidth = 296
+            Color = 1051399
+            ParentBackground = False
+            ParentColor = False
+            TabOrder = 2
+            object chartSNR: TChart
+              Left = 0
+              Height = 133
+              Top = 0
+              Width = 296
+              AllowPanning = False
+              AllowZoom = False
+              AxisList = <              
+                item
+                  Marks.LabelBrush.Style = bsClear
+                  Minors = <>
+                  Title.LabelFont.Orientation = 900
+                  Title.LabelBrush.Style = bsClear
+                end              
+                item
+                  Alignment = calBottom
+                  Marks.LabelBrush.Style = bsClear
+                  Minors = <>
+                  Title.LabelBrush.Style = bsClear
+                end>
+              Foot.Brush.Color = clBtnFace
+              Foot.Font.Color = clBlue
+              Title.Brush.Color = clBtnFace
+              Title.Font.Color = clBlue
+              Title.Text.Strings = (
+                'TAChart'
+              )
+              Align = alClient
+              object lsSNRPeak: TLineSeries
+              end
+              object lsSNRAvg: TLineSeries
+              end
+            end
+            object lblSNRAxis: TLabel
+              Left = 0
+              Height = 20
+              Top = 133
+              Width = 296
+              Align = alBottom
+              Alignment = taCenter
+              AutoSize = False
+              Caption = 'SIGNAL-TO-NOISE RATIO (SNR)'
+              Font.Color = clSilver
+              Font.Height = -11
+              Font.Name = 'Consolas'
+              Layout = tlCenter
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+        end
+      end
+      object pnlCombatLogContainer: TPanel
+        Left = 4
+        Height = 107
+        Top = 189
+        Width = 902
+        Align = alClient
+        BorderSpacing.Around = 4
+        BevelOuter = bvNone
+        ClientHeight = 107
+        ClientWidth = 902
+        Color = 788485
+        ParentBackground = False
+        ParentColor = False
+        TabOrder = 1
+        object lbCombatLog: TListBox
+          Left = 0
+          Height = 107
+          Top = 0
+          Width = 902
+          Align = alClient
+          BorderStyle = bsNone
+          Color = 788485
+          ItemHeight = 18
+          Style = lbOwnerDrawFixed
+          TabOrder = 0
+          OnDrawItem = lbCombatLogDrawItem
+        end
+      end
+    end
+  end
+  object pnlRightControl: TPanel
+    Left = 910
+    Height = 749
+    Top = 0
+    Width = 370
+    Align = alRight
+    BevelOuter = bvNone
+    ClientHeight = 749
+    ClientWidth = 370
+    Color = 2102541
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 1
+    object pnlTopNavTabs: TPanel
+      Left = 0
+      Height = 42
+      Top = 0
+      Width = 370
+      Align = alTop
+      BevelOuter = bvNone
+      ClientHeight = 42
+      ClientWidth = 370
+      Color = 1576970
+      ParentBackground = False
+      ParentColor = False
+      TabOrder = 0
+      object btnTabNav: TSpeedButton
+        Left = 8
+        Height = 30
+        Top = 6
+        Width = 84
+        Caption = 'NAV'
+        Flat = True
+        Font.Color = 14737632
+        Font.Height = -12
+        Font.Name = 'Consolas'
+        Font.Style = [fsBold]
+        ParentFont = False
+        OnClick = btnNavTabClick
+      end
+      object btnTabSensor: TSpeedButton
+        Left = 96
+        Height = 30
+        Top = 6
+        Width = 84
+        Caption = 'SENSOR'
+        Flat = True
+        Font.Color = 16773120
+        Font.Height = -12
+        Font.Name = 'Consolas'
+        Font.Style = [fsBold]
+        ParentFont = False
+        OnClick = btnNavTabClick
+      end
+      object btnTabWeapons: TSpeedButton
+        Left = 184
+        Height = 30
+        Top = 6
+        Width = 84
+        Caption = 'WEAPONS'
+        Flat = True
+        Font.Color = 14737632
+        Font.Height = -12
+        Font.Name = 'Consolas'
+        Font.Style = [fsBold]
+        ParentFont = False
+        OnClick = btnNavTabClick
+      end
+      object btnTabDB: TSpeedButton
+        Left = 272
+        Height = 30
+        Top = 6
+        Width = 88
+        Caption = 'DB'
+        Flat = True
+        Font.Color = 14737632
+        Font.Height = -12
+        Font.Name = 'Consolas'
+        Font.Style = [fsBold]
+        ParentFont = False
+        OnClick = btnNavTabClick
+      end
+    end
+    object pnlHeaderControl: TPanel
+      Left = 0
+      Height = 32
+      Top = 42
+      Width = 370
+      Align = alTop
+      BevelOuter = bvNone
+      ClientHeight = 32
+      ClientWidth = 370
+      Color = 2497040
+      ParentBackground = False
+      ParentColor = False
+      TabOrder = 1
+      object lblControlBoard: TLabel
+        Left = 12
+        Height = 17
+        Top = 7
+        Width = 176
+        Caption = 'TACTICAL CONTROL BOARD'
+        Font.Color = 15790320
+        Font.Height = -14
+        Font.Name = 'Consolas'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+    object pnlControlStack: TPanel
+      Left = 0
+      Height = 675
+      Top = 74
+      Width = 370
+      Align = alClient
+      BevelOuter = bvNone
+      ClientHeight = 675
+      ClientWidth = 370
+      Color = 2102541
+      ParentBackground = False
+      ParentColor = False
+      TabOrder = 2
+      object pnlOperationsView: TPanel
+        Left = 0
+        Height = 675
+        Top = 0
+        Width = 370
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 675
+        ClientWidth = 370
+        Color = clLime
+        ParentBackground = False
+        ParentColor = False
+        TabOrder = 0
+        object pnlPropulsion: TPanel
+          Left = 0
+          Height = 250
+          Top = 0
+          Width = 370
+          Align = alTop
+          BevelOuter = bvNone
+          ClientHeight = 250
+          ClientWidth = 370
+          Color = 2102541
+          ParentBackground = False
+          ParentColor = False
+          TabOrder = 0
+          object lblPropulsionTitle: TLabel
+            Left = 12
+            Height = 15
+            Top = 8
+            Width = 70
+            Caption = 'PROPULSION'
+            Font.Color = 14737632
+            Font.Height = -13
+            Font.Name = 'Consolas'
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object tbThrust: TTrackBar
+            Left = 18
+            Height = 175
+            Top = 34
+            Width = 38
+            Max = 25
+            Orientation = trVertical
+            Position = 5
+            Reversed = True
+            OnChange = tbPropulsionChange
+            TabOrder = 0
+          end
+          object tbDepth: TTrackBar
+            Left = 82
+            Height = 175
+            Top = 34
+            Width = 38
+            Max = 1000
+            Min = 50
+            Orientation = trVertical
+            Position = 450
+            OnChange = tbPropulsionChange
+            TabOrder = 1
+          end
+          object tbHeading: TTrackBar
+            Left = 146
+            Height = 175
+            Top = 34
+            Width = 38
+            Max = 359
+            Orientation = trVertical
+            Position = 180
+            OnChange = tbPropulsionChange
+            TabOrder = 2
+          end
+          object lblCapThrustSlider: TLabel
+            Left = 14
+            Height = 13
+            Top = 218
+            Width = 36
+            Caption = 'THRUST'
+            Font.Color = clSilver
+            Font.Height = -11
+            Font.Name = 'Consolas'
+            ParentColor = False
+            ParentFont = False
+          end
+          object lblCapDepthSlider: TLabel
+            Left = 82
+            Height = 13
+            Top = 218
+            Width = 30
+            Caption = 'DEPTH'
+            Font.Color = clSilver
+            Font.Height = -11
+            Font.Name = 'Consolas'
+            ParentColor = False
+            ParentFont = False
+          end
+          object lblCapHeadingSlider: TLabel
+            Left = 140
+            Height = 13
+            Top = 218
+            Width = 42
+            Caption = 'HEADING'
+            Font.Color = clSilver
+            Font.Height = -11
+            Font.Name = 'Consolas'
+            ParentColor = False
+            ParentFont = False
+          end
+          object pnlReadoutThrust: TPanel
+            Left = 212
+            Height = 62
+            Top = 16
+            Width = 128
+            BevelOuter = bvLowered
+            ClientHeight = 62
+            ClientWidth = 128
+            Color = 1051399
+            ParentBackground = False
+            ParentColor = False
+            TabOrder = 3
+            object lblTitleThrust: TLabel
+              Left = 8
+              Height = 13
+              Top = 6
+              Width = 42
+              Caption = 'THRUST:'
+              Font.Color = clSilver
+              Font.Height = -11
+              Font.Name = 'Consolas'
+              ParentColor = False
+              ParentFont = False
+            end
+            object lblValThrust: TLabel
+              Left = 38
+              Height = 23
+              Top = 26
+              Width = 55
+              Caption = '5 KTS'
+              Font.Color = 16773120
+              Font.Height = -20
+              Font.Name = 'Consolas'
+              Font.Style = [fsBold]
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object pnlReadoutDepth: TPanel
+            Left = 212
+            Height = 62
+            Top = 92
+            Width = 128
+            BevelOuter = bvLowered
+            ClientHeight = 62
+            ClientWidth = 128
+            Color = 1051399
+            ParentBackground = False
+            ParentColor = False
+            TabOrder = 4
+            object lblTitleDepth: TLabel
+              Left = 8
+              Height = 13
+              Top = 6
+              Width = 36
+              Caption = 'DEPTH:'
+              Font.Color = clSilver
+              Font.Height = -11
+              Font.Name = 'Consolas'
+              ParentColor = False
+              ParentFont = False
+            end
+            object lblValDepth: TLabel
+              Left = 38
+              Height = 23
+              Top = 26
+              Width = 44
+              Caption = '450m'
+              Font.Color = 16773120
+              Font.Height = -20
+              Font.Name = 'Consolas'
+              Font.Style = [fsBold]
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object pnlReadoutHeading: TPanel
+            Left = 212
+            Height = 62
+            Top = 168
+            Width = 128
+            BevelOuter = bvLowered
+            ClientHeight = 62
+            ClientWidth = 128
+            Color = 1051399
+            ParentBackground = False
+            ParentColor = False
+            TabOrder = 5
+            object lblTitleHeading: TLabel
+              Left = 8
+              Height = 13
+              Top = 6
+              Width = 48
+              Caption = 'HEADING:'
+              Font.Color = clSilver
+              Font.Height = -11
+              Font.Name = 'Consolas'
+              ParentColor = False
+              ParentFont = False
+            end
+            object lblValHeading: TLabel
+              Left = 38
+              Height = 23
+              Top = 26
+              Width = 44
+              Caption = '180°'
+              Font.Color = 16773120
+              Font.Height = -20
+              Font.Name = 'Consolas'
+              Font.Style = [fsBold]
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+        end
+        object pnlSilentRunning: TPanel
+          Left = 0
+          Height = 64
+          Top = 250
+          Width = 370
+          Align = alTop
+          BevelOuter = bvNone
+          ClientHeight = 64
+          ClientWidth = 370
+          Color = 2497040
+          ParentBackground = False
+          ParentColor = False
+          TabOrder = 1
+          object btnSilentRunning: TSpeedButton
+            Left = 14
+            Height = 42
+            Top = 11
+            Width = 86
+            Caption = 'ON'
+            Font.Color = 57343
+            Font.Height = -15
+            Font.Name = 'Consolas'
+            Font.Style = [fsBold]
+            ParentFont = False
+            OnClick = btnSilentRunningClick
+          end
+          object lblSilentStatus: TLabel
+            Left = 114
+            Height = 28
+            Top = 16
+            Width = 126
+            Caption = 'SILENT RUNNING:'#13#10'ACTIVE (5 KTS MAX)'
+            Font.Color = 55295
+            Font.Height = -12
+            Font.Name = 'Consolas'
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+        end
+        object pnlSensors: TPanel
+          Left = 0
+          Height = 161
+          Top = 314
+          Width = 370
+          Align = alTop
+          BevelOuter = bvNone
+          ClientHeight = 161
+          ClientWidth = 370
+          Color = 2102541
+          ParentBackground = False
+          ParentColor = False
+          TabOrder = 2
+          object lblGainTitle: TLabel
+            Left = 16
+            Height = 13
+            Top = 12
+            Width = 60
+            Caption = 'GAIN LEVEL'
+            Font.Color = 14737632
+            Font.Height = -11
+            Font.Name = 'Consolas'
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object lblFreqFilterTitle: TLabel
+            Left = 126
+            Height = 13
+            Top = 12
+            Width = 72
+            Caption = 'FREQ FILTERS'
+            Font.Color = 14737632
+            Font.Height = -11
+            Font.Name = 'Consolas'
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object lblPingProtectedTop: TLabel
+            Left = 256
+            Height = 13
+            Top = 12
+            Width = 54
+            Caption = 'PROTECTED'
+            Font.Color = 10526880
+            Font.Height = -11
+            Font.Name = 'Consolas'
+            ParentColor = False
+            ParentFont = False
+          end
+          object tbGain: TTrackBar
+            Left = 5
+            Height = 42
+            Top = 32
+            Width = 95
+            Max = 100
+            Min = 10
+            Position = 75
+            OnChange = tbSensorChange
+            TabOrder = 0
+          end
+          object tbFreqFilter: TTrackBar
+            Left = 115
+            Height = 42
+            Top = 32
+            Width = 95
+            Max = 1500
+            Min = 50
+            Position = 450
+            OnChange = tbSensorChange
+            TabOrder = 1
+          end
+          object pnlGainReadout: TPanel
+            Left = 16
+            Height = 28
+            Top = 70
+            Width = 84
+            BevelOuter = bvLowered
+            ClientHeight = 28
+            ClientWidth = 84
+            Color = 1051399
+            ParentBackground = False
+            ParentColor = False
+            TabOrder = 2
+            object lblValGain: TLabel
+              Left = 1
+              Height = 26
+              Top = 1
+              Width = 82
+              Align = alClient
+              Alignment = taCenter
+              Caption = 'HIGH'
+              Font.Color = 16773120
+              Font.Height = -12
+              Font.Name = 'Consolas'
+              Font.Style = [fsBold]
+              Layout = tlCenter
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object pnlFreqReadout: TPanel
+            Left = 126
+            Height = 28
+            Top = 70
+            Width = 84
+            BevelOuter = bvLowered
+            ClientHeight = 28
+            ClientWidth = 84
+            Color = 1051399
+            ParentBackground = False
+            ParentColor = False
+            TabOrder = 3
+            object lblValFreq: TLabel
+              Left = 1
+              Height = 26
+              Top = 1
+              Width = 82
+              Align = alClient
+              Alignment = taCenter
+              Caption = '450Hz'
+              Font.Color = 16773120
+              Font.Height = -12
+              Font.Name = 'Consolas'
+              Font.Style = [fsBold]
+              Layout = tlCenter
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object pnlActivePingGuard: TPanel
+            Left = 242
+            Height = 96
+            Top = 36
+            Width = 92
+            BevelOuter = bvLowered
+            ClientHeight = 96
+            ClientWidth = 92
+            Color = 1579080
+            ParentBackground = False
+            ParentColor = False
+            TabOrder = 4
+            object btnActivePing: TSpeedButton
+              Left = 6
+              Height = 84
+              Top = 6
+              Width = 80
+              Caption = 'ACTIVE'#13#10'PING'
+              Font.Color = 4339455
+              Font.Height = -13
+              Font.Name = 'Consolas'
+              Font.Style = [fsBold]
+              ParentFont = False
+              OnClick = btnActivePingClick
+            end
+          end
+          object lblPingProtectedBot: TLabel
+            Left = 256
+            Height = 13
+            Top = 142
+            Width = 54
+            Caption = 'PROTECTED'
+            Font.Color = 10526880
+            Font.Height = -11
+            Font.Name = 'Consolas'
+            ParentColor = False
+            ParentFont = False
+          end
+        end
+        object pnlTorpedoBay: TPanel
+          Left = 0
+          Height = 200
+          Top = 475
+          Width = 370
+          Align = alClient
+          BevelOuter = bvNone
+          ClientHeight = 200
+          ClientWidth = 370
+          Color = 2102541
+          ParentBackground = False
+          ParentColor = False
+          TabOrder = 3
+          object lblTorpedoTitle: TLabel
+            Left = 12
+            Height = 14
+            Top = 10
+            Width = 77
+            Caption = 'TORPEDO BAY'
+            Font.Color = 16773120
+            Font.Height = -12
+            Font.Name = 'Consolas'
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object pnlTube1: TPanel
+            Left = 12
+            Height = 36
+            Top = 34
+            Width = 160
+            BevelOuter = bvLowered
+            ClientHeight = 36
+            ClientWidth = 160
+            Color = 1585168
+            ParentBackground = False
+            ParentColor = False
+            TabOrder = 0
+            object btnTube1: TSpeedButton
+              Left = 1
+              Height = 34
+              Top = 1
+              Width = 158
+              Align = alClient
+              Caption = 'Tube 1: READY'
+              Flat = True
+              Font.Color = 6750054
+              Font.Height = -12
+              Font.Name = 'Consolas'
+              Font.Style = [fsBold]
+              ParentFont = False
+              OnClick = btnTube1Click
+            end
+          end
+          object pnlTube2: TPanel
+            Left = 12
+            Height = 36
+            Top = 80
+            Width = 160
+            BevelOuter = bvLowered
+            ClientHeight = 36
+            ClientWidth = 160
+            Color = 1051399
+            ParentBackground = False
+            ParentColor = False
+            TabOrder = 1
+            object btnTube2: TSpeedButton
+              Left = 1
+              Height = 34
+              Top = 1
+              Width = 158
+              Align = alClient
+              Caption = 'Tube 2: LOADING'
+              Flat = True
+              Font.Color = 45055
+              Font.Height = -12
+              Font.Name = 'Consolas'
+              Font.Style = [fsBold]
+              ParentFont = False
+              OnClick = btnTube2Click
+            end
+          end
+          object pnlHullStatus: TPanel
+            Left = 184
+            Height = 52
+            Top = 14
+            Width = 158
+            BevelOuter = bvLowered
+            ClientHeight = 52
+            ClientWidth = 158
+            Color = 1051399
+            ParentBackground = False
+            ParentColor = False
+            TabOrder = 2
+            object lblHullIntegrity: TLabel
+              Left = 10
+              Height = 28
+              Top = 10
+              Width = 105
+              Caption = 'HULL INTEGRITY:'#13#10'100%'
+              Font.Color = 6750054
+              Font.Height = -12
+              Font.Name = 'Consolas'
+              Font.Style = [fsBold]
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object pnlDecoyControl: TPanel
+            Left = 184
+            Height = 58
+            Top = 74
+            Width = 158
+            BevelOuter = bvLowered
+            ClientHeight = 58
+            ClientWidth = 158
+            Color = 1051399
+            ParentBackground = False
+            ParentColor = False
+            TabOrder = 3
+            object btnDeployDecoy: TSpeedButton
+              Left = 1
+              Height = 56
+              Top = 1
+              Width = 156
+              Align = alClient
+              Caption = 'DECOY READY'#13#10'(COOLDOWN: 0s)'
+              Flat = True
+              Font.Color = 55295
+              Font.Height = -11
+              Font.Name = 'Consolas'
+              Font.Style = [fsBold]
+              ParentFont = False
+              OnClick = btnDeployDecoyClick
+            end
+          end
+        end
+      end
+      object pnlDatabaseView: TPanel
+        Left = 0
+        Height = 675
+        Top = 0
+        Width = 370
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 675
+        ClientWidth = 370
+        Color = 2102541
+        ParentBackground = False
+        ParentColor = False
+        TabOrder = 1
+        Visible = False
+        object lblDBTitle: TLabel
+          Left = 8
+          Height = 14
+          Top = 8
+          Width = 126
+          Caption = 'HIGH SCORES LEDGER'
+          Font.Color = 16773120
+          Font.Height = -12
+          Font.Name = 'Consolas'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object btnDBRefresh: TSpeedButton
+          Left = 286
+          Height = 24
+          Top = 4
+          Width = 76
+          Caption = 'REFRESH'
+          Font.Color = 14737632
+          Font.Height = -11
+          Font.Name = 'Consolas'
+          ParentFont = False
+          OnClick = btnDBRefreshClick
+        end
+        object dbgHighScores: TDBGrid
+          Left = 8
+          Height = 642
+          Top = 32
+          Width = 354
+          BorderStyle = bsNone
+          Color = 1576970
+          Columns = <>
+          FixedColor = 2497040
+          FixedCols = 0
+          Font.Color = 14737632
+          Font.Height = -12
+          Font.Name = 'Consolas'
+          Options = [dgTitles, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+          ParentFont = False
+          ReadOnly = True
+          Scrollbars = ssVertical
+          TabOrder = 0
+        end
+      end
+    end
+  end
+  object pnlMissionEndOverlay: TPanel
+    Left = 0
+    Height = 749
+    Top = 0
+    Width = 910
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 749
+    ClientWidth = 910
+    Color = clBlack
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 2
+    Visible = False
+    object pnlEndCardBg: TPanel
+      Left = 440
+      Height = 320
+      Top = 224
+      Width = 400
+      BevelWidth = 2
+      ClientHeight = 320
+      ClientWidth = 400
+      Color = 2102541
+      ParentBackground = False
+      ParentColor = False
+      TabOrder = 0
+      object lblMissionStatus: TLabel
+        Left = 0
+        Height = 24
+        Top = 30
+        Width = 400
+        Alignment = taCenter
+        AutoSize = False
+        Caption = 'MISSION STATUS'
+        Font.Color = clWhite
+        Font.Height = -21
+        Font.Name = 'Consolas'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object lblEndStatsLabel: TLabel
+        Left = 0
+        Height = 15
+        Top = 90
+        Width = 400
+        Alignment = taCenter
+        AutoSize = False
+        Caption = '--- AFTER ACTION REPORT ---'
+        Font.Color = 16777088
+        Font.Height = -13
+        Font.Name = 'Consolas'
+        ParentColor = False
+        ParentFont = False
+      end
+      object lblEndStatTime: TLabel
+        Left = 80
+        Height = 15
+        Top = 140
+        Width = 240
+        AutoSize = False
+        Caption = 'TIME SURVIVED : 00:00'
+        Font.Color = clSilver
+        Font.Height = -13
+        Font.Name = 'Consolas'
+        ParentColor = False
+        ParentFont = False
+      end
+      object lblEndStatScore: TLabel
+        Left = 80
+        Height = 15
+        Top = 170
+        Width = 240
+        AutoSize = False
+        Caption = 'FINAL SCORE   : 0 PTS'
+        Font.Color = clSilver
+        Font.Height = -13
+        Font.Name = 'Consolas'
+        ParentColor = False
+        ParentFont = False
+      end
+      object lblEndStatTorps: TLabel
+        Left = 80
+        Height = 15
+        Top = 200
+        Width = 240
+        AutoSize = False
+        Caption = 'TORPEDO FIRED : 0'
+        Font.Color = clSilver
+        Font.Height = -13
+        Font.Name = 'Consolas'
+        ParentColor = False
+        ParentFont = False
+      end
+      object btnRestartMission: TSpeedButton
+        Left = 40
+        Height = 40
+        Top = 250
+        Width = 150
+        Caption = 'RESTART MISSION'
+        Flat = True
+        Font.Color = 57343
+        Font.Height = -13
+        Font.Name = 'Consolas'
+        Font.Style = [fsBold]
+        ParentFont = False
+        OnClick = btnRestartMissionClick
+      end
+      object btnExitToMenu: TSpeedButton
+        Left = 210
+        Height = 40
+        Top = 250
+        Width = 150
+        Caption = 'EXIT TO MENU'
+        Flat = True
+        Font.Color = 39423
+        Font.Height = -13
+        Font.Name = 'Consolas'
+        Font.Style = [fsBold]
+        ParentFont = False
+        OnClick = btnExitToMenuClick
+      end
+    end
+  end
+  object udsWaveform: TListChartSource
+    Left = 408
+    Top = 520
+  end
+  object udsBaseline: TListChartSource
+    Left = 488
+    Top = 520
+  end
+  object udsSNRPeak: TListChartSource
+    Left = 700
+    Top = 520
+  end
+  object udsSNRAvg: TListChartSource
+    Left = 780
+    Top = 520
+  end
+  object dsHighScores: TDataSource
+    Left = 1040
+    Top = 320
+  end
+  object sqlqHighScores: TSQLQuery
+    FieldDefs = <>
+    Params = <>
+    Macros = <>
+    Left = 1136
+    Top = 320
+  end
+  object MainMenu1: TMainMenu
+    Left = 699
+    Top = 576
+    object MenuItem1: TMenuItem
+      Caption = 'Application'
+      object MenuItem4: TMenuItem
+        Caption = 'Exit'
+      end
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Help'
+      object MenuItem3: TMenuItem
+        Caption = 'Tutorial ID'
+      end
+      object MenuItem5: TMenuItem
+        Caption = 'Tutorial EN'
+      end
+      object Separator1: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem6: TMenuItem
+        Caption = 'About Me'
+      end
+    end
+  end
+end
